@@ -1,0 +1,100 @@
+//**********************************
+// Fonction pour le mixin de boutons
+//**********************************
+@mixin static($mixin-name, $extend: true) {
+  // set global variable if it doesn't already exist
+  $Placeholder-Selectors: () !global !default;
+  $selector: map-get($Placeholder-Selectors, $mixin-name);
+  @if $extend == true {
+    @if $selector == null {
+      $selector: unique-id();
+      $Placeholder-Selectors: map-merge($Placeholder-Selectors, ($mixin-name: $selector)) !global;
+      @at-root %#{$selector} {
+        @include static($mixin-name, false) {
+          @content;
+        };
+      }
+    }
+    @extend %#{$selector};
+  } @else {
+    @content; 
+  }
+}
+
+//***************
+// Bouton General
+//***************
+@mixin button($display:inline-block,$font:$platform, $font-size:1rem,$font-weight:normal,$text-transform:uppercase, $bg-color:$gris, $color:$noir, $padding:0.6rem, $bg-color-hover:$noir3, $color-hover:#fff) {
+  // déclaration des variables pour changer l'aspect du bouton
+  @include static('button') {
+    // valeur du bouton static transversale à tous les boutons (display,padding etc...)
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  // valeurs du bouton spécifiques (color,background,font,etc..)
+  display: $display;
+  font-family: $font;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  text-transform: $text-transform;
+  background-color: $bg-color;
+  color: $color;
+  padding: $padding;
+  &:hover {
+    background-color: $bg-color-hover;
+    color: $color-hover;
+  }
+  @include transition;
+}
+
+@mixin clearfix { // from compass
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// transition
+@mixin transition {
+  transition-property: all;
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+}
+
+
+@mixin xp-btn {
+  border-radius: 3px;
+  border-bottom: 3px solid $noir3;
+  @include montserrat;
+  &:hover {
+    background-color: $noir3;
+    color: #fff;
+    border-color: $yellow;
+  }
+  @media screen and (min-width: $tab) {
+    font-size: 0.8rem;
+  }
+}
+
+@mixin corner {
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      width: 6rem;
+      height: 6rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-repeat: no-repeat;
+      background-image: url('../img/corner.svg');
+    }
+}
+
+@mixin pseudo-element($element) {
+  &:#{$element}, &::#{$element} {
+    @content;
+  }
+}

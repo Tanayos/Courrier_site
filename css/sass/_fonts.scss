@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Platform';
+  src: url('fonts/platform-light.woff2') format('woff2'), url('fonts/platform-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Platform';
+  src: url('fonts/platform-medium.woff2') format('woff2'), url('fonts/platform-medium.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/roboto-light.woff2') format('woff2'), url('fonts/roboto-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-slab';
+  src: url('fonts/robotoslab-regular.woff2') format('woff2'), url('fonts/robotoslab-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto-slab';
+  src: url('fonts/robotoslab-light.woff2') format('woff2'), url('fonts/robotoslab-light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-slab';
+  src: url('fonts/robotoslab-bold.woff2') format('woff2'), url('fonts/robotoslab-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Nyte";
+  src: url('fonts/Nyte-Book.woff2') format('woff2'),
+  url('fonts/Nyte-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+// ICONS FONT
+
+@font-face {
+    font-family: 'iconCI';
+    src: url('fonts/iconci.woff2') format('woff2'),
+    url('fonts/iconci.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// EXPAT FONTS
+
+// @font-face {
+//   font-family: 'Oswald';
+//   src: url('fonts/expat/oswald-regular.woff2') format('woff2'),
+//   url('fonts/expat/oswald-regular.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: 'Montserrat';
+//   src: url('fonts/expat/montserrat-light_0.woff2') format('woff2'),
+//   url('fonts/expat/montserrat-light_0.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: 'Montserrat';
+//   src: url('fonts/expat/montserrat-bold.woff2') format('woff2'),
+//   url('fonts/expat/montserrat-bold.woff') format('woff');
+//   font-weight: bold;
+//   font-style: normal;
+// }
+
+@mixin nyte {
+  font-family: 'Nyte Book', 'Georgia', 'Times New Roman', serif;
+}
+@mixin roboto {
+  font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+}
+@mixin roboto-slab {
+  font-family: 'Roboto-slab', 'Arial', 'Helvetica', sans-serif;
+}
+@mixin platform {
+  font-family: 'Platform', 'Arial', 'Helvetica', sans-serif;
+}
+
+@mixin iconci {
+  font-family: 'iconCI';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+// @mixin oswald {
+//   font-family: 'Oswald', 'Arial', 'Helvetica', sans-serif;
+// }
+// @mixin montserrat {
+//   font-family: 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+// }
